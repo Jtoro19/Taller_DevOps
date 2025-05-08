@@ -25,3 +25,12 @@ def mostrar_estudiantes(estudiantes):
     print("-" * 22)
     for nombre, nota in estudiantes_ordenados:
         print(f"{nombre:<15} {nota:<5.2f}")
+
+def calcular_promedio(estudiantes):
+    if not estudiantes:
+        print("\nNo hay estudiantes válidos para calcular el promedio.")
+        return
+
+    suma = sum(nota for _, nota in estudiantes)
+    promedio = suma / len(estudiantes)
+    print(f"\nPromedio general: {promedio:.2f}")
