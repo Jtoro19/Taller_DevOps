@@ -16,3 +16,12 @@ def cargar_estudiantes(ruta_csv):
                 continue
 
     return estudiantes
+
+def mostrar_estudiantes(estudiantes):
+    estudiantes_ordenados = sorted(estudiantes, key=lambda x: x[0].lower())
+
+    print("\nEstudiantes:")
+    print(f"{'Nombre':<15} {'Nota':<5}")
+    print("-" * 22)
+    for nombre, nota in estudiantes_ordenados:
+        print(f"{nombre:<15} {nota:<5.2f}")
